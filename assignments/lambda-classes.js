@@ -33,9 +33,10 @@ class Student extends Person{
         this.classname = studAttr.className;
         this.favSub = studAttr.favSubject; //array
     }//constructor
-    listsSubjects(sub){
+    listsSubjects(){
         
-        return 
+        this.favSub.forEach(favSubject => console.log(favSubject));
+        
     }//list sub
     PRAssignment(){
         return `${this.newName} has submitted a PR for ${this.newSub}.`;
@@ -93,18 +94,27 @@ const studentOne = new Student({
     name: 'student one',
     previousBackground: 'web design',
     className: 'web 23',
-    favSub: ['HTML','CSS', 'JS'], ////////
+    favSub: ['HTML','CSS', 'JS'], 
 });
 
 //PM 
 const tlOne = new ProjectManager({
+    name: 'TL 1',
     gradClassName: 'web 23',
     favInstructor: 'Anson',
     channel: 'web23_help',
 
 });
 const tlTwo = new ProjectManager({
+    name: 'TL 2',
     gradClassName: 'web 23',
     favInstructor: 'Fred',
     channel: 'web23_ah',
 });
+
+console.log(personOne.speak());
+console.log(anson.demo("javascript 4"));
+//console.log(studentOne.listsSubjects()); //////////
+console.log(studentOne.PRAssignment());
+console.log(tlOne.standup());
+//console.log(tlTwo.debugsCode()); /////////
